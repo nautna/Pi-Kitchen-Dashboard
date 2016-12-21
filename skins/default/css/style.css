@@ -83,6 +83,11 @@ font-size: 3.5vmin;
  margin-top: 2.5vmin;
 margin-bottom: 0.5vmin;
 }
+.loc {
+font-size: 3.5vmin;
+ margin-top: 2.5vmin;
+margin-bottom: 0.5vmin;
+}
 .highTemp {
 font-size: 3vmin;
 }

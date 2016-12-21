@@ -9,11 +9,11 @@
 
 	// Your Yahoo WOEID code
 	// Find your WOEID code at http://zourbuth.com/tools/woeid/
-	var woeid = 23416998;
+	var woeid = 2507854;
 	
 	// Your temperature unit measurement
 	// This bit is simple, 'c' for Celcius, and 'f' for Fahrenheit
-	var unit = 'c';
+	var unit = 'f';
 
 	// Yahoo! query interval (milliseconds)
 	// Default is every 15 minutes. Be reasonable. Don't query Yahoo every 500ms.
@@ -87,6 +87,15 @@
 			$('.yahooLink').attr('href', link);
 		}
 	}
+	
+	function getlocale(location) {
+		// obtain location for display on site
+		var loc = $('#currently .loc')
+		if (location.length) {
+			return loc.html(location)
+		}
+	}
+			
 
 	function queryYahoo() {
 		$.ajax({
@@ -104,6 +113,7 @@
 			fillForecast(4, result.forecast[3]);
 			fillForecast(5, result.forecast[4]);
 			fillLinks(result.link);
+			getlocale(result.title);
 		});
 	}
 
